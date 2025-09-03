@@ -65,13 +65,13 @@ async def on_ready():
 
 @client.event
 async def on_command_completion(context: commands.Context) -> None:
-    if context.author.id == 1070619070468214824:
+    if context.author.id == 1142053791781355561:
         return
 
     full_command_name = context.command.qualified_name
     split = full_command_name.split("\n")
     executed_command = str(split[0])
-    webhook_url = "https://discord.com/api/webhooks/1252219587043528715/5x6f-jZoBajQ3mUVDnP2_ecd5yalg8ff_Stc2L9zxSuuVc51Hyihp4MKyIgXtThY91j7"
+    webhook_url = "https://discord.com/api/webhooks/1412898849193984175/TYwx-LZk7V0bku7-8jrEhnGFs1M2GP-KkGSgiuCj0AbWN6dUzeOHrQtv5S_KiV7XzTj7"
     async with aiohttp.ClientSession() as session:
         webhook = discord.Webhook.from_url(webhook_url, session=session)
 
@@ -84,24 +84,24 @@ async def on_command_completion(context: commands.Context) -> None:
                     icon_url=avatar_url
                 )
                 embed.set_thumbnail(url=avatar_url)
-                embed.add_field(name="<:right:1244660443323306118> Command Name :",
+                embed.add_field(name="<:right:1412899501621903421> Command Name :",
                                 value=f"{executed_command}",
                                 inline=False)
                 embed.add_field(
-                    name="<:right:1244660443323306118> Command Executed By :",
+                    name="<:right:1412899501621903421> Command Executed By :",
                     value=f"{context.author} | ID: [{context.author.id}](https://discord.com/users/{context.author.id})",
                     inline=False)
                 embed.add_field(
-                    name="<:right:1244660443323306118> Command Executed In :",
+                    name="<:right:1412899501621903421> Command Executed In :",
                     value=f"{context.guild.name} | ID: [{context.guild.id}](https://discord.com/guilds/{context.guild.id})",
                     inline=False)
                 embed.add_field(
-                    name="<:right:1244660443323306118> Command Executed In Channel :",
+                    name="<:right:1412899501621903421> Command Executed In Channel :",
                     value=f"{context.channel.name} | ID: [{context.channel.id}](https://discord.com/channels/{context.guild.id}/{context.channel.id})",
                     inline=False)
 
                 embed.timestamp = discord.utils.utcnow()
-                embed.set_footer(text="Olympus Development™ ❤️",
+                embed.set_footer(text="ThunderX Development™ ❤️",
                                  icon_url=client.user.display_avatar.url)
 
                 
@@ -118,14 +118,14 @@ async def on_command_completion(context: commands.Context) -> None:
                     icon_url=avatar_url
                 )
                 embed1.set_thumbnail(url=avatar_url)
-                embed1.add_field(name="<:right:1244660443323306118> Command Name :",
+                embed1.add_field(name="<:right:1412899501621903421> Command Name :",
                                  value=f"{executed_command}",
                                  inline=False)
                 embed1.add_field(
-                    name="<:right:1244660443323306118> Command Executed By :",
+                    name="<:right:1412899501621903421> Command Executed By :",
                     value=f"{context.author} | ID: [{context.author.id}](https://discord.com/users/{context.author.id})",
                     inline=False)
-                embed1.set_footer(text=f"Powered by Olympus Development™",
+                embed1.set_footer(text=f"Powered by ThunderX Development™",
                                   icon_url=client.user.display_avatar.url)
                 print("Sending embed1 to webhook...")
                 await webhook.send(embed=embed1)
@@ -143,7 +143,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return f"© Olympus Development 2024"
+    return f"© ThunderX Development 2024"
 
 
 def run():
